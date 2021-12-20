@@ -1,3 +1,3 @@
 build:
 	mkdir bin
-	cp src/main bin/frida-ios-dump
+	cp src/main bin/trial

@@ -1,17 +1,54 @@
 #!/usr/bin/env sh
 
-if [[ ! -n $1 ]] || [[ ! -n $2 ]]; then
-	echo "frida-ios-dump <source.app> <target.ipa>"
-	exit
-fi
+echo "Axure RP9"
+rm -rf ~/.config/.isolated-storage >/dev/null 2>&1
 
-target_ipa=$(cd "$(dirname "$2")"; pwd)/$(basename "$2")
+# echo "BetterZip"
+# defaults delete com.macitbetter.betterzip >/dev/null 2>&1
+# rm ~/Library/Application\ Support/.mib_profile >/dev/null 2>&1
 
-cd $HOME
-if [[ ! -d ".frida-ios-dump" ]]; then
-	git clone https://github.com/AloneMonkey/frida-ios-dump.git .frida-ios-dump
-fi
+echo "Beyond Compare"
+rm ~/Library/Application\ Support/Beyond\ Compare/registry.dat >/dev/null 2>&1
 
-cd .frida-ios-dump
-pipenv install
-pipenv run ./dump.py -o $target_ipa $1
+echo "Carbon Copy Cloner"
+defaults delete com.bombich.ccc >/dev/null 2>&1
+
+echo "Cornerstone"
+rm ~/Library/Containers/com.zennaware.cornerstone3/Data/Library/Application\ Support/com.zennaware.cornerstone3/.* >/dev/null 2>&1
+
+echo "CrossOver"
+defaults delete com.codeweavers.CrossOver >/dev/null 2>&1
+
+echo "Downie 3"
+rm -rf ~/Library/Application\ Support/Downie\ 3 >/dev/null 2>&1
+
+echo "FSMonitor"
+# printf "1000000000000000000" > ~/Library/Application\ Support/.incstan.sfnom.dmo1.1 >/dev/null 2>&1
+rm ~/Library/Application\ Support/.incstan.sfnom.dmo* >/dev/null 2>&1
+
+echo "NTFS for Mac"
+killall FSApp >/dev/null 2>&1
+sudo rm /Library/Application\ Support/Paragon\ Software/.config >/dev/null 2>&1
+sudo rm /Library/Application\ Support/Paragon\ Software/.support >/dev/null 2>&1
+sudo pkill com.paragon-software.ntfsd >/dev/null 2>&1
+sudo pkill com.paragon-software.installer >/dev/null 2>&1
+
+echo "Parallels Desktop"
+sudo rm /private/var/root/Library/Preferences/com.parallels.desktop.plist >/dev/null 2>&1
+sudo rm -rf /Library/Preferences/Parallels/ >/dev/null 2>&1
+
+echo "Paste"
+killall Paste >/dev/null 2>&1
+rm -rf ~/Library/Application\ Support/Paste >/dev/null 2>&1
+defaults delete com.wiheads.paste Paddle-Paste-511976-SD >/dev/null 2>&1
+open -a Paste >/dev/null 2>&1
+
+echo "Permute 3"
+rm -rf ~/Library/Containers/com.charliemonroe.Permute-3/Data/Library/Application\ Support/Permute\ 3 >/dev/null 2>&1
+
+echo "Transmit"
+defaults delete com.panic.Transmit >/dev/null 2>&1
+
+echo "UninstallPKG"
+defaults delete com.corecode.UninstallPKG >/dev/null 2>&1
+defaults write com.corecode.UninstallPKG Usages -integer -999 >/dev/null 2>&1
