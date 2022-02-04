@@ -19,7 +19,8 @@ rm ~/Library/Containers/com.zennaware.cornerstone3/Data/Library/Application\ Sup
 echo "CrossOver"
 defaults delete com.codeweavers.CrossOver >/dev/null 2>&1
 
-echo "Downie 3"
+# ???
+echo "Downie 4"
 rm -rf ~/Library/Application\ Support/Downie\ 3 >/dev/null 2>&1
 
 echo "FSMonitor"
@@ -43,6 +44,7 @@ rm ~/Library/Application\ Support/.incstan.sfnom.dmo* >/dev/null 2>&1
 # defaults delete com.wiheads.paste Paddle-Paste-511976-SD >/dev/null 2>&1
 # open -a Paste >/dev/null 2>&1
 
+# ???
 echo "Permute 3"
 rm -rf ~/Library/Containers/com.charliemonroe.Permute-3/Data/Library/Application\ Support/Permute\ 3 >/dev/null 2>&1
 
